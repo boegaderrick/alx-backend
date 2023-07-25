@@ -27,10 +27,10 @@ class FIFOCache(BaseCaching):
             self.cache_data[key] = item
             self.__timestamps[key] = datetime.now()
             if len(self.cache_data) > self.MAX_ITEMS:
-                key = self.get_oldest()
-                print('DISCARD: {}'.format(key))
-                del self.cache_data[key]
-                del self.__timestamps[key]
+                oldestKey = self.get_oldest()
+                print('DISCARD: {}'.format(oldestKey))
+                del self.cache_data[oldestKey]
+                del self.__timestamps[oldestKey]
 
     def get_oldest(self):
         """Helper method to retrieve the oldes key"""
