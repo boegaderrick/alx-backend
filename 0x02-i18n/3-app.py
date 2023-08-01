@@ -29,7 +29,7 @@ def get_locale():
 def get_root():
     """This function renders the home page"""
     return render_template('3-index.html', home_title=_(
-        'home_title'), home_header=_('home_header'))
+        'Welcome to Holberton'), home_header=_('Hello world!'))
 
 
 if __name__ == '__main__':
