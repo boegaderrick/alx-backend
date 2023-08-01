@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """This module contains a basic babel setup"""
 from flask import Flask, render_template, request
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 app = Flask(__name__)
 babel = Babel(app)
@@ -28,8 +28,7 @@ def get_locale():
 @app.route('/')
 def get_root():
     """This function renders the home page"""
-    return render_template('3-index.html', home_title=_(
-        'Welcome to Holberton'), home_header=_('Hello world!'))
+    return render_template('3-index.html')
 
 
 if __name__ == '__main__':
