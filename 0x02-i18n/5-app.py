@@ -33,6 +33,7 @@ def get_user(user_id):
     except Exception:
         return None
 
+
 @app.before_request
 def before_request():
     """Assign user specified in query string to 'g.user'"""
