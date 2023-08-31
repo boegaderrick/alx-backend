@@ -15,7 +15,7 @@ const jobs = [
 ];
 
 
-/*before(function() {
+before(function() {
   queue.testMode.enter();
 });
 
@@ -25,7 +25,7 @@ afterEach(function() {
 
 after(function() {
   queue.testMode.exit()
-});*/
+});
 
 
 describe('createPushNotificationsJobs', () => {
@@ -34,9 +34,7 @@ describe('createPushNotificationsJobs', () => {
     expect(() => createPushNotificationsJobs('test', queue)).to.throw('Jobs is not an array');
   });
   it('succesfully creates jobs', (done) => {
-    //for (const jobData of jobs) {
     createPushNotificationsJobs(jobs, queue);
-    //}
     expect(queue.testMode.jobs.length).to.equal(2);
     expect(queue.testMode.jobs[0].data).to.equal(jobs[0]);
     expect(queue.testMode.jobs[1].data).to.equal(jobs[1]);
